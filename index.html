@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meyers Reset -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./assets/css/index.css">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Americana Eats & Sweets</title>
+  </head>
+  <body>
+
+    <!-- Begin Application Content -->
+    <main class="app" id="app">
+
+      <!-- Begin Header Content -->
+      <header class="head" id="header">
+        <img src="./assets/images/avatars/avatar-chinese.png" alt="User Avatar" class="head__avatar" id="user-avatar">
+        <div class="welcome-container" id="welcome-container">
+          <p class="dark-text">Welcome back, Jessica!</p>
+          <p class="dark-text">How Hungry are you? 😋</p>
+        </div>
+      </header>
+      <!-- End Header Content -->
+
+      <!-- Begin Search Container -->
+      <section class="search-container" id="search-container">
+        <input type="text" name="search" class="search-input" id="search" placeholder="Search...">
+        <button class="btn-search" id="search-button">
+          <!-- Search Icon -->
+          <img src="./assets/images/icons/Search.svg">
+        </button>
+        <!-- Filter Button -->
+        <button class="btn-filter" id="filter-button">
+          <!-- Filter Icon -->
+          <img src="./assets/images/icons/Filter.svg">
+        </button>
+      </section>
+      <!-- End Search Container -->
+
+      <!-- Begin Today's Menu Section -->
+      <section class="daily-deals" id="daily-menu">
+        <h2 class="h2">Today's Deals</h2>
+        <div class="deal-carousel" id="deal-carousel" aria-live="polite" aria-atomic="true">
+          <div class="deal-item"><img class="deal-item__food" src="./assets/images/food/donut.svg" alt=""><h2 class="h2-deal">Free Donut!</h2><p class="deal-sub-text">For orders over $20</p></div>
+          <div class="deal-item"><img class="deal-item__food" src="./assets/images/food/donut.svg" alt=""><h2 class="h2-deal">Free Donut!</h2><p class="deal-sub-text">For orders over $20</p></div>
+          <div class="deal-item"><img class="deal-item__food" src="./assets/images/food/donut.svg" alt=""><h2 class="h2-deal">Free Donut!</h2><p class="deal-sub-text">For orders over $20</p></div>
+          <div class="deal-item"><img class="deal-item__food" src="./assets/images/food/donut.svg" alt=""><h2 class="h2-deal">Free Donut!</h2><p class="deal-sub-text">For orders over $20</p></div>
+        </div>
+        <div class="deal-button-container">
+          <button aria-label="Previous Deal Item" class="btn-deal btn-deal--previous" id="previous-daily-button"></button>
+          <button aria-label="Next Deal Item" class="btn-deal btn-deal--next" id="next-daily-button"></button>
+        </div>
+      </section>
+      <!-- End Today's Menu Section -->
+
+      <!-- Begin Navigation -->
+      <nav class="nav">
+        <div class="nav-item"><img class="nav__icon" src="./assets/images/icons/Poi.svg" alt=""><p class="dark-text">Location</p></div>
+        <div class="nav-item"><img class="nav__icon" src="./assets/images/icons/Home.svg" alt=""><p class="dark-text">Home</p></div>
+        <div class="nav-item"><img class="nav__icon" src="./assets/images/icons/Bag.svg" alt=""><p class="dark-text">Cart</p></div>
+        <div class="nav-item"><img class="nav__icon" src="./assets/images/icons/User.svg" alt=""><p class="dark-text">Me</p></div>
+      </nav>
+      <!-- End Navigation -->
+
+    </main>
+    <!-- End Application Content -->
+
+    <!-- Primary JavaScript File -->
+    <script type="module" src="./assets/js/index.js"></script>
+    <!-- Carousel Controller -->
+    <script src="./assets/js/carousel.js"></script>
+  </body>
+</html>
