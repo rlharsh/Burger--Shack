@@ -18,6 +18,7 @@ document.addEventListener('keydown', (event) => {
 });
 
 setInterval(() => {
+    /*
     if (currentCard + 1 < CARD_COUNT) {
         currentCard++;
     } else {
@@ -25,6 +26,7 @@ setInterval(() => {
     }
 
     moveSlider();
+    */
 }, 10000);
 
 const goNextDeal = () => {

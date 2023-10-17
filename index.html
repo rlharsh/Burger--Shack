@@ -48,7 +48,7 @@
 
       <!-- Begin Today's Menu Section -->
       <section class="daily-deals" id="daily-menu">
-        <h2 class="h2">Today's Deals</h2>
+        <h2 class="h2">Daily Deals 💸</h2>
         <div class="deal-carousel" id="deal-carousel" aria-live="polite" aria-atomic="true">
           <div class="deal-item"><img class="deal-item__food" src="./assets/images/food/donut.svg" alt=""><h2 class="h2-deal">Free Donut!</h2><p class="deal-sub-text">For orders over $20</p></div>
           <div class="deal-item"><img class="deal-item__food" src="./assets/images/food/donut.svg" alt=""><h2 class="h2-deal">Free Donut!</h2><p class="deal-sub-text">For orders over $20</p></div>
@@ -72,10 +72,22 @@
       <!-- End Navigation -->
 
       <!-- Begin Categories Section -->
-      <h2 class="h2">Categories</h2>
       <section class="categories" id="categories">
-
+        <!-- Data here is loaded from categories.js -->
       </section>
+      <!-- End Categories Section -->
+
+      <!-- Begin Best Offers Section -->
+      <section class="offers" id="offers">
+        <h2 class="h2">
+          Best Offers 😍
+        </h2>
+        <!-- Begin Offers Listing -->
+        <div class="deals-container" id="deals-container">
+
+        </div>
+      </section>
+      <!-- End Best Offers Section -->
 
     </main>
     <!-- End Application Content -->
@@ -85,6 +97,6 @@
     <!-- Carousel Controller -->
     <script src="./assets/js/carousel.js"></script>
     <!-- Categories -->
-    <script src="./assets/js/categories.js"></script>
+    <script type="module" src="./assets/js/categories.js"></script>
   </body>
 </html>

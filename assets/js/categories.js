@@ -1,3 +1,5 @@
+import { itemDatabase } from './firebase.js';
+
 const categoryListing = [
     {
         name: "Burgers",
@@ -48,10 +50,25 @@ const loadCategories = () => {
         itemImage.classList.add('category-item__image');
         itemCard.appendChild(itemImage);
 
+        itemCard.addEventListener('click', () => {
+            processClickCategory(item.name);
+        });
+
         itemFragment.appendChild(itemCard);
     });
 
     document.getElementById('categories').appendChild(itemFragment);
+};
+
+const processClickCategory = (category) => {
+    let itemsInCategory = [];
+    itemDatabase.forEach(item => {
+        if (item.category === category.toLowerCase()) {
+            itemsInCategory.push(item);
+        }
+    });
+
+    console.log(...itemsInCategory);
 };
 
 loadCategories();

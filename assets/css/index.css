@@ -12,7 +12,7 @@
     --Grey-Light: #F5F5F5;
     --Blue: #A9D7DA;
     --Radius: 1.75rem;
-    --Shadow: 0px 8px 20px 0px rgba(214, 211, 192, 0.40);
+    --Shadow: 0px 16px 32px 0px rgba(194, 191, 172, 0.60);
 }
 
 * {
@@ -42,7 +42,7 @@ body {
     flex-direction: column;
     gap: 1.62rem;
 
-    margin-bottom: 12rem;
+    margin-bottom: 20rem;
 }
 
 .head {
@@ -207,7 +207,9 @@ input[type=text] {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: var(--Shadow);
+    cursor: pointer;
+    user-select: none;
 }
 
 .deal-item__food {
@@ -233,14 +235,14 @@ input[type=text] {
     max-width: 393px;
     width: 393px;
     min-height: 5.75rem;
-    background-color: #fff;
+    background-color: var(--White-Off);
     border-radius: 1.75rem;
     position: fixed;
     bottom: 1.25rem;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
-    box-shadow: 0px 16px 32px 0px rgba(194, 191, 172, 0.60);
+    box-shadow: var(--Shadow);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -276,7 +278,7 @@ input[type=text] {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    box-shadow: 0px 16px 32px 0px rgba(194, 191, 172, 0.60);
+    box-shadow: var(--Shadow);
     overflow: hidden;
     position: relative;
     align-items: center;
@@ -296,6 +298,38 @@ input[type=text] {
     bottom: 0;
 }
 
+.offers {
+    margin-top: 1rem;
+}
+
+.deals-container {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.sale-item {
+    background-color: var(--White);
+    color: var(--Dark);
+    min-width: 100%;
+    min-height: 7.25rem;
+    border-radius: 1.75rem;
+    box-shadow: var(--Shadow);
+    display: flex;
+    padding: .88rem;
+    cursor: pointer;
+    gap: 1rem;
+    align-items: center;
+}
+
+.deal__description {
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+}
+
 /* Typography */
 .dark-text {
     color: var(--Dark);
@@ -303,7 +337,7 @@ input[type=text] {
 
 .h2 {
     color: var(--Dark);
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .h2-deal {
