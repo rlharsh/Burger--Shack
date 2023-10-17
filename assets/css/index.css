@@ -322,6 +322,11 @@ input[type=text] {
     cursor: pointer;
     gap: 1rem;
     align-items: center;
+    transition: all .25s ease-in-out;
+}
+
+.sale-item:hover {
+    transform: translateY(-.4rem);
 }
 
 .deal__description {

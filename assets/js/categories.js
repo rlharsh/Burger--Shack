@@ -67,8 +67,11 @@ const processClickCategory = (category) => {
             itemsInCategory.push(item);
         }
     });
+    showCategory(itemsInCategory);
+};
 
-    console.log(...itemsInCategory);
+const showCategory = (items) => {
+
 };
 
 loadCategories();
