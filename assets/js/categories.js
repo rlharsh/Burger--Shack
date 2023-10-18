@@ -71,7 +71,17 @@ const processClickCategory = (category) => {
 };
 
 const showCategory = (items) => {
+    const categoryContainer = document.getElementById('modal-category');
 
+    if (categoryContainer.classList.contains('hidden')) {
+        categoryContainer.classList.remove('hidden');
+    }
+
+    let itemFragment = document.createDocumentFragment();
+    const categoryListingContainer = document.getElementById('category-lising-container');
+    items.forEach(item => {
+
+    });
 };
 
 loadCategories();

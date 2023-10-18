@@ -3,6 +3,7 @@
     --Pink: #F5CAC3;
     --Pink-Light: #e4c9c5;
     --Dark: #3D405B;
+    --Light: #6b6e8d;
     --White: #FFF;
     --Green-Deep: #84A59D;
     --Green: #B6D7CF;
@@ -12,7 +13,7 @@
     --Grey-Light: #F5F5F5;
     --Blue: #A9D7DA;
     --Radius: 1.75rem;
-    --Shadow: 0px 16px 32px 0px rgba(194, 191, 172, 0.60);
+    --Shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 * {
@@ -28,7 +29,6 @@ body {
 .app {
     position: relative;
     /* Dimensions */
-    max-height: 852px;
     max-width: 393px;
 
     /* Alignment (Center) */
@@ -43,6 +43,7 @@ body {
     gap: 1.62rem;
 
     margin-bottom: 20rem;
+    overflow-x: hidden;
 }
 
 .head {
@@ -155,6 +156,28 @@ input[type=text] {
     background-color: var(--Pink-Light);
 }
 
+.btn-close {
+    /* Properties */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 2.75rem;
+    max-width: 2.75rem;
+    min-height: 2.75rem;
+    flex-grow: 0;
+    cursor: pointer;
+    transition: background-color .25s ease-in-out;
+
+    /* Style */
+    border: none;
+    background-color: var(--Pink);
+    border-radius: 1rem;
+}
+
+.btn-close:hover {
+    background-color: var(--Pink-Light);
+}
+
 .btn-deal {
     /* Style */
     border-radius: 2rem;
@@ -235,7 +258,7 @@ input[type=text] {
     max-width: 393px;
     width: 393px;
     min-height: 5.75rem;
-    background-color: var(--White-Off);
+    background-color: var(--White);
     border-radius: 1.75rem;
     position: fixed;
     bottom: 1.25rem;
@@ -318,21 +341,115 @@ input[type=text] {
     border-radius: 1.75rem;
     box-shadow: var(--Shadow);
     display: flex;
+    flex-direction: row;
     padding: .88rem;
     cursor: pointer;
     gap: 1rem;
     align-items: center;
     transition: all .25s ease-in-out;
+    position: relative;
 }
 
 .sale-item:hover {
     transform: translateY(-.4rem);
 }
 
+.sale-item img {
+    max-width: 3.9rem;
+    max-height: 5.125rem;
+}
+
 .deal__description {
     display: flex;
     flex-direction: column;
     gap: .2rem;
+}
+
+.modal-category {
+    display: flex;
+    position: fixed;
+    background-color: var(--White);
+    max-width: 393px;
+    width: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    min-height: 100vh;
+    z-index: 100;
+
+    /* Properties */
+    display: flex;
+    flex-direction: column;
+    gap: 1.62rem;
+}
+
+.modal-category__header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+    min-height: 4rem;
+    background-color: var(--Pink-Deep);
+    padding: 3.56rem 1.2rem;
+    border-radius: 0 0 var(--Radius) var(--Radius);
+    box-shadow: var(--Shadow);
+    position: relative;
+    height: 22.75rem;
+    overflow: visible;
+    max-height: 22.75rem;
+}
+
+.item {
+    width: 100%;
+    background-color: var(--White);
+    display: flex;
+    /* gap: 1.25rem; */
+    border-radius: var(--Radius);
+    box-shadow: var(--Shadow);
+    min-height: 5.5rem;
+    position: relative;
+    padding: .75rem 1.5rem;
+    gap: 1.25rem;
+    align-items: center;
+    user-select: none;
+}
+
+.item__image {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.category-listing {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+}
+
+.item__description {
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+}
+
+.category-listing-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+}
+
+.modal-category__header__information {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.hidden {
+    display: none;
 }
 
 /* Typography */
@@ -346,12 +463,42 @@ input[type=text] {
 }
 
 .h2-deal {
-    color: var(--White);
+    color: var(--Dark);
     font-size: 1.5rem;
     font-weight: 700;
 }
 
+.h2-title {
+    color: var(--White);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.h2-item {
+    font-size: 0.8rem;
+    color: var(--Pink-Deep);
+}
+
+.light {
+    color: var(--Light)
+}
+
+.price {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    font-size: .75rem;
+    color: var(--Pink-Deep);
+}
 
 .deal-sub-text {
     color: #F4F1DE;
+}
+
+.modal-category-icon {
+    height: 16rem;
+    width: 18rem;
+    position: absolute;
+    right: -4rem;
+    bottom: -2rem;
 }
