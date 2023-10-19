@@ -273,7 +273,7 @@ input[type=text] {
     z-index: 1000;
     box-shadow: var(--Shadow);
     display: flex;
-    justify-content: space-evenly;
+    justify-content:space-around;
     align-items: center;
 }
 
