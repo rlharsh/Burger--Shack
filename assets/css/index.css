@@ -34,9 +34,6 @@ body {
     /* Alignment (Center) */
     margin: 0 auto;
 
-    /* Padding */
-    padding: 3.56rem 1.12rem;
-
     /* Properties */
     display: flex;
     flex-direction: column;

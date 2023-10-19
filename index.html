@@ -26,186 +26,196 @@
     <title>Americana Eats & Sweets</title>
   </head>
   <body>
-    <!-- Begin Application Content -->
-    <main class="app" id="app">
-      <!-- Begin Header Content -->
-      <header class="head" id="header">
-        <img
-          src="./assets/images/avatars/avatar-chinese.png"
-          alt="User Avatar"
-          class="head__avatar"
-          id="user-avatar"
-        />
-        <div class="welcome-container" id="welcome-container">
-          <p class="dark-text">Welcome back, Jessica!</p>
-          <p class="dark-text">How Hungry are you? 😋</p>
-        </div>
-      </header>
-      <!-- End Header Content -->
-
-      <!-- Begin Search Container -->
-      <section class="search-container" id="search-container">
-        <input
-          type="text"
-          name="search"
-          class="search-input"
-          id="search"
-          placeholder="Search..."
-        />
-        <button class="btn-search" id="search-button">
-          <!-- Search Icon -->
-          <img src="./assets/images/icons/Search.svg" />
-        </button>
-        <!-- Filter Button -->
-        <button class="btn-filter" id="filter-button">
-          <!-- Filter Icon -->
-          <img src="./assets/images/icons/Filter.svg" />
-        </button>
-      </section>
-      <!-- End Search Container -->
-
-      <!-- Begin Today's Menu Section -->
-      <section class="daily-deals" id="daily-menu">
-        <h2 class="h2">Daily Deals 💸</h2>
-        <div
-          class="deal-carousel"
-          id="deal-carousel"
-          aria-live="polite"
-          aria-atomic="true"
-        >
-          <div class="deal-item">
-            <img
-              class="deal-item__food"
-              src="./assets/images/food/donut.svg"
-              alt=""
-            />
-            <h2 class="h2-deal">Free Donut!</h2>
-            <p class="deal-sub-text">For orders over $20</p>
-          </div>
-          <div class="deal-item">
-            <img
-              class="deal-item__food"
-              src="./assets/images/food/donut.svg"
-              alt=""
-            />
-            <h2 class="h2-deal">Free Donut!</h2>
-            <p class="deal-sub-text">For orders over $20</p>
-          </div>
-          <div class="deal-item">
-            <img
-              class="deal-item__food"
-              src="./assets/images/food/donut.svg"
-              alt=""
-            />
-            <h2 class="h2-deal">Free Donut!</h2>
-            <p class="deal-sub-text">For orders over $20</p>
-          </div>
-          <div class="deal-item">
-            <img
-              class="deal-item__food"
-              src="./assets/images/food/donut.svg"
-              alt=""
-            />
-            <h2 class="h2-deal">Free Donut!</h2>
-            <p class="deal-sub-text">For orders over $20</p>
-          </div>
-        </div>
-        <div class="deal-button-container">
-          <button
-            aria-label="Previous Deal Item"
-            class="btn-deal btn-deal--previous"
-            id="previous-daily-button"
-          ></button>
-          <button
-            aria-label="Next Deal Item"
-            class="btn-deal btn-deal--next"
-            id="next-daily-button"
-          ></button>
-        </div>
-      </section>
-      <!-- End Today's Menu Section -->
-
-      <!-- Begin Navigation -->
-      <nav class="nav">
-        <div class="nav-item">
-          <img class="nav__icon" src="./assets/images/icons/Poi.svg" alt="" />
-          <p class="dark-text">Location</p>
-        </div>
-        <div class="nav-item">
-          <img class="nav__icon" src="./assets/images/icons/Home.svg" alt="" />
-          <p class="dark-text">Home</p>
-        </div>
-        <div class="nav-item">
-          <img class="nav__icon" src="./assets/images/icons/Bag.svg" alt="" />
-          <p class="dark-text">Cart</p>
-        </div>
-        <div class="nav-item">
-          <img class="nav__icon" src="./assets/images/icons/User.svg" alt="" />
-          <p class="dark-text">Me</p>
-        </div>
-      </nav>
-      <!-- End Navigation -->
-
-      <!-- Begin Categories Section -->
-      <section class="categories" id="categories">
-        <!-- Data here is loaded from categories.js -->
-      </section>
-      <!-- End Categories Section -->
-
-      <!-- Begin Best Offers Section -->
-      <section class="offers" id="offers">
-        <h2 class="h2">Best Offers 😍</h2>
-        <!-- Begin Offers Listing -->
-        <div class="deals-container" id="deals-container"></div>
-      </section>
-      <!-- End Best Offers Section -->
-
-      <!-- Begin Category Overlay -->
-      <div class="modal-category hidden" id="modal-category">
-        <!-- Begin Category Modal Header -->
-        <section class="modal-category__header" id="modal-category__header">
-          <div class="modal-category__header__information">
-            <h2 class="modal-category__header__title h2-deal">{$title}</h2>
-            <button class="btn-close" id="close-button"></button>
-          </div>
+    <div>
+      <!-- Begin Application Content -->
+      <div class="app" id="app">
+        <!-- Begin Header Content -->
+        <header class="head" id="header">
           <img
-            id="modal-category-icon"
-            class="modal-category-icon"
-            src="./assets/images/food/Burger.png"
+            src="./assets/images/avatars/avatar-chinese.png"
+            alt="User Avatar"
+            class="head__avatar"
+            id="user-avatar"
           />
-        </section>
-        <!-- End Category Modal Header -->
+          <div class="welcome-container" id="welcome-container">
+            <p class="dark-text">Welcome back, Jessica!</p>
+            <p class="dark-text">How Hungry are you? 😋</p>
+          </div>
+        </header>
+        <!-- End Header Content -->
 
-        <!-- Begin Category Item Listing -->
-        <section class="category-listing" id="category-listing">
-          <h2 class="h2">All of our Hamburger's</h2>
+        <!-- Begin Search Container -->
+        <section class="search-container" id="search-container">
+          <input
+            type="text"
+            name="search"
+            class="search-input"
+            id="search"
+            placeholder="Search..."
+          />
+          <button class="btn-search" id="search-button">
+            <!-- Search Icon -->
+            <img src="./assets/images/icons/Search.svg" />
+          </button>
+          <!-- Filter Button -->
+          <button class="btn-filter" id="filter-button">
+            <!-- Filter Icon -->
+            <img src="./assets/images/icons/Filter.svg" />
+          </button>
+        </section>
+        <!-- End Search Container -->
+
+        <!-- Begin Today's Menu Section -->
+        <section class="daily-deals" id="daily-menu">
+          <h2 class="h2">Daily Deals 💸</h2>
           <div
-            class="category-listing-container"
-            id="category-lising-container"
+            class="deal-carousel"
+            id="deal-carousel"
+            aria-live="polite"
+            aria-atomic="true"
           >
-            <!-- Data here is loaded from categories.js -->
-            <div class="item">
-              <div class="item__image">
-                <img
-                  class="item__image__image"
-                  src="./assets/images/food/Burger.svg"
-                  alt=""
-                />
-              </div>
-              <div class="item__description">
-                <h2 class="h2">Mr. Cheezy</h2>
-                <p class="h2-item light">The best burger around!</p>
-              </div>
-              <p class="price">$5.99</p>
+            <div class="deal-item">
+              <img
+                class="deal-item__food"
+                src="./assets/images/food/donut.svg"
+                alt=""
+              />
+              <h2 class="h2-deal">Free Donut!</h2>
+              <p class="deal-sub-text">For orders over $20</p>
+            </div>
+            <div class="deal-item">
+              <img
+                class="deal-item__food"
+                src="./assets/images/food/donut.svg"
+                alt=""
+              />
+              <h2 class="h2-deal">Free Donut!</h2>
+              <p class="deal-sub-text">For orders over $20</p>
+            </div>
+            <div class="deal-item">
+              <img
+                class="deal-item__food"
+                src="./assets/images/food/donut.svg"
+                alt=""
+              />
+              <h2 class="h2-deal">Free Donut!</h2>
+              <p class="deal-sub-text">For orders over $20</p>
+            </div>
+            <div class="deal-item">
+              <img
+                class="deal-item__food"
+                src="./assets/images/food/donut.svg"
+                alt=""
+              />
+              <h2 class="h2-deal">Free Donut!</h2>
+              <p class="deal-sub-text">For orders over $20</p>
             </div>
           </div>
+          <div class="deal-button-container">
+            <button
+              aria-label="Previous Deal Item"
+              class="btn-deal btn-deal--previous"
+              id="previous-daily-button"
+            ></button>
+            <button
+              aria-label="Next Deal Item"
+              class="btn-deal btn-deal--next"
+              id="next-daily-button"
+            ></button>
+          </div>
         </section>
-        <!-- End Category Item Listing -->
-      </div>
+        <!-- End Today's Menu Section -->
 
-      <!-- End Category Overlay -->
-    </main>
-    <!-- End Application Content -->
+        <!-- Begin Navigation -->
+        <nav class="nav">
+          <div class="nav-item">
+            <img class="nav__icon" src="./assets/images/icons/Poi.svg" alt="" />
+            <p class="dark-text">Location</p>
+          </div>
+          <div class="nav-item">
+            <img
+              class="nav__icon"
+              src="./assets/images/icons/Home.svg"
+              alt=""
+            />
+            <p class="dark-text">Home</p>
+          </div>
+          <div class="nav-item">
+            <img class="nav__icon" src="./assets/images/icons/Bag.svg" alt="" />
+            <p class="dark-text">Cart</p>
+          </div>
+          <div class="nav-item">
+            <img
+              class="nav__icon"
+              src="./assets/images/icons/User.svg"
+              alt=""
+            />
+            <p class="dark-text">Me</p>
+          </div>
+        </nav>
+        <!-- End Navigation -->
+
+        <!-- Begin Categories Section -->
+        <section class="categories" id="categories">
+          <!-- Data here is loaded from categories.js -->
+        </section>
+        <!-- End Categories Section -->
+
+        <!-- Begin Best Offers Section -->
+        <section class="offers" id="offers">
+          <h2 class="h2">Best Offers 😍</h2>
+          <!-- Begin Offers Listing -->
+          <div class="deals-container" id="deals-container"></div>
+        </section>
+        <!-- End Best Offers Section -->
+
+        <!-- Begin Category Overlay -->
+        <div class="modal-category hidden" id="modal-category">
+          <!-- Begin Category Modal Header -->
+          <section class="modal-category__header" id="modal-category__header">
+            <div class="modal-category__header__information">
+              <h2 class="modal-category__header__title h2-deal">{$title}</h2>
+              <button class="btn-close" id="close-button"></button>
+            </div>
+            <img
+              id="modal-category-icon"
+              class="modal-category-icon"
+              src="./assets/images/food/Burger.png"
+            />
+          </section>
+          <!-- End Category Modal Header -->
+
+          <!-- Begin Category Item Listing -->
+          <section class="category-listing" id="category-listing">
+            <h2 class="h2">All of our Hamburger's</h2>
+            <div
+              class="category-listing-container"
+              id="category-lising-container"
+            >
+              <!-- Data here is loaded from categories.js -->
+              <div class="item">
+                <div class="item__image">
+                  <img
+                    class="item__image__image"
+                    src="./assets/images/food/Burger.svg"
+                    alt=""
+                  />
+                </div>
+                <div class="item__description">
+                  <h2 class="h2">Mr. Cheezy</h2>
+                  <p class="h2-item light">The best burger around!</p>
+                </div>
+                <p class="price">$5.99</p>
+              </div>
+            </div>
+          </section>
+          <!-- End Category Item Listing -->
+        </div>
+
+        <!-- End Category Overlay -->
+      </div>
+      <!-- End Application Content -->
+    </div>
 
     <!-- Primary JavaScript File -->
     <script type="module" src="./assets/js/index.js"></script>
