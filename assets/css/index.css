@@ -264,7 +264,7 @@ input[type=text] {
     max-width: 393px;
     width: 393px;
     min-height: 5.75rem;
-    background-color: var(--White);
+    background-color: var(--White-Orange);
     border-radius: 1.75rem;
     position: fixed;
     bottom: 1.25rem;
