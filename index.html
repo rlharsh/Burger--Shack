@@ -26,7 +26,7 @@
     <title>Americana Eats & Sweets</title>
   </head>
   <body>
-    <div>
+    <div class="container">
       <!-- Begin Application Content -->
       <div class="app" id="app">
         <!-- Begin Header Content -->
@@ -168,53 +168,52 @@
           <div class="deals-container" id="deals-container"></div>
         </section>
         <!-- End Best Offers Section -->
-
-        <!-- Begin Category Overlay -->
-        <div class="modal-category hidden" id="modal-category">
-          <!-- Begin Category Modal Header -->
-          <section class="modal-category__header" id="modal-category__header">
-            <div class="modal-category__header__information">
-              <h2 class="modal-category__header__title h2-deal">{$title}</h2>
-              <button class="btn-close" id="close-button"></button>
-            </div>
-            <img
-              id="modal-category-icon"
-              class="modal-category-icon"
-              src="./assets/images/food/Burger.png"
-            />
-          </section>
-          <!-- End Category Modal Header -->
-
-          <!-- Begin Category Item Listing -->
-          <section class="category-listing" id="category-listing">
-            <h2 class="h2">All of our Hamburger's</h2>
-            <div
-              class="category-listing-container"
-              id="category-lising-container"
-            >
-              <!-- Data here is loaded from categories.js -->
-              <div class="item">
-                <div class="item__image">
-                  <img
-                    class="item__image__image"
-                    src="./assets/images/food/Burger.svg"
-                    alt=""
-                  />
-                </div>
-                <div class="item__description">
-                  <h2 class="h2">Mr. Cheezy</h2>
-                  <p class="h2-item light">The best burger around!</p>
-                </div>
-                <p class="price">$5.99</p>
-              </div>
-            </div>
-          </section>
-          <!-- End Category Item Listing -->
-        </div>
-
-        <!-- End Category Overlay -->
       </div>
       <!-- End Application Content -->
+      <!-- Begin Category Modal -->
+      <div class="modal-category hidden" id="modal-category">
+        <!-- Begin Category Modal Header -->
+        <section class="modal-category__header" id="modal-category__header">
+          <div class="modal-category__header__information">
+            <h2 class="modal-category__header__title h2-deal">{$title}</h2>
+            <button class="btn-close" id="close-button"></button>
+          </div>
+          <img
+            id="modal-category-icon"
+            class="modal-category-icon"
+            src="./assets/images/food/Burger.png"
+          />
+        </section>
+        <!-- End Category Modal Header -->
+
+        <!-- Begin Category Item Listing -->
+        <section class="category-listing" id="category-listing">
+          <h2 class="h2">All of our Hamburger's</h2>
+          <div
+            class="category-listing-container"
+            id="category-lising-container"
+          >
+            <!-- Data here is loaded from categories.js -->
+            <div class="item">
+              <div class="item__image">
+                <img
+                  class="item__image__image"
+                  src="./assets/images/food/Burger.svg"
+                  alt=""
+                />
+              </div>
+              <div class="item__description">
+                <h2 class="h2">Mr. Cheezy</h2>
+                <p class="h2-item light">The best burger around!</p>
+              </div>
+              <p class="price">$5.99</p>
+            </div>
+          </div>
+        </section>
+        <!-- End Category Item Listing -->
+      </div>
+
+      <!-- End Category Overlay -->
     </div>
 
     <!-- Primary JavaScript File -->

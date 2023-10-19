@@ -26,7 +26,14 @@ body {
     color: var(--Pink);
 }
 
+.container {
+    padding: 0;
+    margin: 0;
+}
+
 .app {
+        /* Padding */
+        padding: 3.56rem 1.12rem;
     position: relative;
     /* Dimensions */
     max-width: 393px;
