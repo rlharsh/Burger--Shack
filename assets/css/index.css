@@ -352,6 +352,7 @@ input[type=text] {
     align-items: center;
     transition: all .25s ease-in-out;
     position: relative;
+    background-color: var(--Blue);
 }
 
 .sale-item:hover {
@@ -359,8 +360,7 @@ input[type=text] {
 }
 
 .sale-item img {
-    max-width: 3.9rem;
-    max-height: 5.125rem;
+    max-width: 6em;
 }
 
 .deal__description {
