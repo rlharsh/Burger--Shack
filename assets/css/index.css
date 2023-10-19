@@ -509,3 +509,9 @@ input[type=text] {
     right: -2rem;
     bottom: -2rem;
 }
+
+.no-scroll {
+    overflow: hidden;
+    height: 100%;
+    display: none;
+}
