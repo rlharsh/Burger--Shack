@@ -1,34 +1,35 @@
 import { itemDatabase } from "./firebase.js";
+import { clickCategoryItem } from "./clickHandler.js";
 
 const categoryListing = [
   {
     name: "Burgers",
-    icon: "Burger.svg",
+    icon: "Burger.png",
     color: "#FFEF92",
   },
   {
-    name: "Fries & More",
-    icon: "Fries.svg",
+    name: "Fries",
+    icon: "Fries.png",
     color: "#F5CAC3",
   },
   {
     name: "Chicken",
-    icon: "Burger.svg",
+    icon: "Chicken.png",
     color: "#F7EDE2",
   },
   {
     name: "Desserts",
-    icon: "Desserts.svg",
+    icon: "Desserts.png",
     color: "#A9D7DA",
   },
   {
     name: "Drinks",
-    icon: "Drinks.svg",
+    icon: "Drinks.png",
     color: "#B6D7CF",
   },
   {
     name: "Coffee",
-    icon: "Coffee.svg",
+    icon: "Coffee.png",
     color: "#F5F5F5",
   },
 ];
@@ -72,7 +73,7 @@ const processClickCategory = (category) => {
       itemsInCategory.push(item);
     }
   });
-  showCategory(itemsInCategory);
+  showCategory(category, itemsInCategory);
 };
 
 const hideMain = () => {
@@ -87,18 +88,63 @@ const showMain = () => {
   categoryContainer.classList.add("hidden");
 };
 
-const showCategory = (items) => {
+const showCategory = (category, items) => {
   const categoryContainer = document.getElementById("modal-category");
 
   categoryContainer.classList.remove("hidden");
 
   hideMain();
 
+  document.getElementById("category-title-header").textContent = category;
+  const categorySelect = categoryListing.find((cat) => cat.name === category);
+  document.getElementById(
+    "modal-category-icon"
+  ).src = `../assets/images/food/${categorySelect.icon}`;
+  document.getElementById(
+    "category-descriptive-text"
+  ).textContent = `All of our ${category.toLowerCase()}!`;
+  document.getElementById("modal-category__header").style.backgroundColor =
+    categorySelect.color;
+
   let itemFragment = document.createDocumentFragment();
   const categoryListingContainer = document.getElementById(
     "category-lising-container"
   );
-  items.forEach((item) => {});
+  categoryListingContainer.innerHTML = "";
+  items.forEach((item) => {
+    const card = document.createElement("div");
+    card.classList.add("item");
+    const price = document.createElement("p");
+    price.classList.add("price");
+    price.innerText = `$${item.price}`;
+    card.appendChild(price);
+
+    const imageDiv = document.createElement("div");
+    imageDiv.classList.add("item__image");
+    const itemImage = document.createElement("img");
+    itemImage.src = `../assets/images/food/${item.image}`;
+    itemImage.classList.add("item__image__image");
+    imageDiv.appendChild(itemImage);
+    card.appendChild(imageDiv);
+
+    const itemDescriptionContainer = document.createElement("div");
+    itemDescriptionContainer.classList.add("item__description");
+    const itemName = document.createElement("h2");
+    itemName.classList.add("h2");
+    itemName.textContent = item.name;
+    itemDescriptionContainer.appendChild(itemName);
+    const itemTagline = document.createElement("p");
+    itemTagline.classList.add("h2-item");
+    itemTagline.classList.add("light");
+    itemTagline.textContent = item.tagline;
+    itemDescriptionContainer.appendChild(itemTagline);
+    card.addEventListener("click", () => {
+      clickCategoryItem(item);
+    });
+
+    card.appendChild(itemDescriptionContainer);
+    categoryListingContainer.appendChild(card);
+  });
 };
 
 loadCategories();
