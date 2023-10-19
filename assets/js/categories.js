@@ -33,6 +33,11 @@ const categoryListing = [
   },
 ];
 
+const CLOSE_CATEGORY_BUTTON = document.getElementById("close-button");
+CLOSE_CATEGORY_BUTTON.addEventListener("click", (event) => {
+  showMain();
+});
+
 const loadCategories = () => {
   let itemFragment = document.createDocumentFragment();
 
@@ -73,14 +78,19 @@ const processClickCategory = (category) => {
 const hideMain = () => {
   const appDiv = document.getElementById("app");
   appDiv.classList.add("no-scroll");
-  console.log("NO SCROLL");
+};
+
+const showMain = () => {
+  const appDiv = document.getElementById("app");
+  appDiv.classList.remove("no-scroll");
+  const categoryContainer = document.getElementById("modal-category");
+  categoryContainer.classList.add("hidden");
 };
 
 const showCategory = (items) => {
   const categoryContainer = document.getElementById("modal-category");
-  if (categoryContainer.classList.contains("hidden")) {
-    categoryContainer.classList.remove("hidden");
-  }
+
+  categoryContainer.classList.remove("hidden");
 
   hideMain();
 
