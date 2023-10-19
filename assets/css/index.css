@@ -4,6 +4,7 @@
     --Pink-Light: #e4c9c5;
     --Dark: #3D405B;
     --Light: #6b6e8d;
+    --Purple: #f3daff;
     --White: #FFF;
     --Green-Deep: #84A59D;
     --Green: #B6D7CF;
@@ -361,7 +362,7 @@ input[type=text] {
 }
 
 .sale-item img {
-    max-width: 6em;
+    max-width: 6rem;
 }
 
 .deal__description {
@@ -409,7 +410,7 @@ input[type=text] {
 
 .item {
     width: 100%;
-    background-color: var(--White);
+    background-color: var(--Purple);
     display: flex;
     /* gap: 1.25rem; */
     border-radius: var(--Radius);
@@ -420,12 +421,17 @@ input[type=text] {
     gap: 1.25rem;
     align-items: center;
     user-select: none;
+    cursor: pointer;
 }
 
 .item__image {
     display: flex;
     justify-content: flex-start;
     position: relative;
+}
+
+.item__image__image {
+    max-width: 6rem;
 }
 
 .category-listing {
@@ -488,7 +494,8 @@ input[type=text] {
 }
 
 .light {
-    color: var(--Light)
+    font-size: .75rem;
+    color: var(--Light);
 }
 
 .price {
