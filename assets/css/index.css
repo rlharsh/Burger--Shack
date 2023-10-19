@@ -279,6 +279,7 @@ input[type=text] {
 }
 
 .nav-item {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -492,6 +493,22 @@ input[type=text] {
 }
 
 /* Typography */
+.cart-text {
+    position: absolute;
+    top: 0;
+    right: -.4rem;
+    background-color: var(--Pink-Deep);
+    padding: .4rem;
+    border-radius: 50%;
+    color: var(--White);
+    font-size: .625rem;
+    height: 1rem;
+    width: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .dark-text {
     color: var(--Dark);
 }
