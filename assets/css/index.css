@@ -223,8 +223,8 @@ input[type=text] {
 
 .deal-item {
     height: 8rem;
-    width: 22.25rem;
-    background: var(--Green);
+    width: 100%;
+    background: var(--Pink-Deep);
     border-radius: 1.75rem;
     padding: 1.875rem 1.25rem;
     margin-right: 5px;
