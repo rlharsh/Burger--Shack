@@ -1,5 +1,10 @@
 import { itemDatabase } from "./firebase.js";
-import { clickCategoryItem } from "./clickHandler.js";
+import {
+  clickCategoryItem,
+  clickCategory,
+  clickCloseCategory,
+  clickCloseItem,
+} from "./clickHandler.js";
 
 const categoryListing = [
   {
@@ -36,7 +41,12 @@ const categoryListing = [
 
 const CLOSE_CATEGORY_BUTTON = document.getElementById("close-button");
 CLOSE_CATEGORY_BUTTON.addEventListener("click", (event) => {
-  showMain();
+  clickCloseCategory();
+});
+
+const CLOSE_ITEM_BUTTON = document.getElementById("item-close-button");
+CLOSE_ITEM_BUTTON.addEventListener("click", (event) => {
+  clickCloseItem();
 });
 
 const loadCategories = () => {
@@ -57,7 +67,7 @@ const loadCategories = () => {
     itemCard.appendChild(itemImage);
 
     itemCard.addEventListener("click", () => {
-      processClickCategory(item.name);
+      clickCategory(item.name);
     });
 
     itemFragment.appendChild(itemCard);
@@ -66,7 +76,8 @@ const loadCategories = () => {
   document.getElementById("categories").appendChild(itemFragment);
 };
 
-const processClickCategory = (category) => {
+export const processClickCategory = (category) => {
+  console.log(category);
   let itemsInCategory = [];
   itemDatabase.forEach((item) => {
     if (item.category === category.toLowerCase()) {
@@ -76,25 +87,7 @@ const processClickCategory = (category) => {
   showCategory(category, itemsInCategory);
 };
 
-const hideMain = () => {
-  const appDiv = document.getElementById("app");
-  appDiv.classList.add("no-scroll");
-};
-
-const showMain = () => {
-  const appDiv = document.getElementById("app");
-  appDiv.classList.remove("no-scroll");
-  const categoryContainer = document.getElementById("modal-category");
-  categoryContainer.classList.add("hidden");
-};
-
 const showCategory = (category, items) => {
-  const categoryContainer = document.getElementById("modal-category");
-
-  categoryContainer.classList.remove("hidden");
-
-  hideMain();
-
   document.getElementById("category-title-header").textContent = category;
   const categorySelect = categoryListing.find((cat) => cat.name === category);
   document.getElementById(
@@ -106,7 +99,6 @@ const showCategory = (category, items) => {
   document.getElementById("modal-category__header").style.backgroundColor =
     categorySelect.color;
 
-  let itemFragment = document.createDocumentFragment();
   const categoryListingContainer = document.getElementById(
     "category-lising-container"
   );

@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Meyers Reset -->
+    <!-- Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Americana Eats & Sweets</title>
+
+    <!-- Meyer's Reset -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
@@ -18,18 +23,15 @@
       rel="stylesheet"
     />
 
-    <!-- Stylesheets -->
+    <!-- Local Stylesheets -->
     <link rel="stylesheet" href="./assets/css/index.css" />
-
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Americana Eats & Sweets</title>
   </head>
+
   <body>
     <div class="container">
       <!-- Begin Application Content -->
       <div class="app" id="app">
-        <!-- Begin Header Content -->
+        <!-- Header Section -->
         <header class="head" id="header">
           <img
             src="./assets/images/avatars/anime-girl.jpg"
@@ -42,9 +44,8 @@
             <p class="dark-text">How Hungry are you? 😋</p>
           </div>
         </header>
-        <!-- End Header Content -->
 
-        <!-- Begin Search Container -->
+        <!-- Search Section -->
         <section class="search-container" id="search-container">
           <input
             type="text"
@@ -54,18 +55,14 @@
             placeholder="Search..."
           />
           <button class="btn-search" id="search-button">
-            <!-- Search Icon -->
-            <img src="./assets/images/icons/Search.svg" />
+            <img src="./assets/images/icons/Search.svg" alt="Search Icon" />
           </button>
-          <!-- Filter Button -->
           <button class="btn-filter" id="filter-button">
-            <!-- Filter Icon -->
-            <img src="./assets/images/icons/Filter.svg" />
+            <img src="./assets/images/icons/Filter.svg" alt="Filter Icon" />
           </button>
         </section>
-        <!-- End Search Container -->
 
-        <!-- Begin Today's Menu Section -->
+        <!-- Daily Deals Section -->
         <section class="daily-deals" id="daily-menu">
           <h2 class="h2">Daily Deals 💸</h2>
           <div
@@ -74,42 +71,17 @@
             aria-live="polite"
             aria-atomic="true"
           >
+            <!-- Repeated items can be filled dynamically as needed -->
             <div class="deal-item">
               <img
                 class="deal-item__food"
                 src="./assets/images/food/donut.svg"
-                alt=""
+                alt="Deal Food Image"
               />
               <h2 class="h2-deal">Free Donut!</h2>
               <p class="deal-sub-text">For orders over $20</p>
             </div>
-            <div class="deal-item">
-              <img
-                class="deal-item__food"
-                src="./assets/images/food/donut.svg"
-                alt=""
-              />
-              <h2 class="h2-deal">Free Donut!</h2>
-              <p class="deal-sub-text">For orders over $20</p>
-            </div>
-            <div class="deal-item">
-              <img
-                class="deal-item__food"
-                src="./assets/images/food/donut.svg"
-                alt=""
-              />
-              <h2 class="h2-deal">Free Donut!</h2>
-              <p class="deal-sub-text">For orders over $20</p>
-            </div>
-            <div class="deal-item">
-              <img
-                class="deal-item__food"
-                src="./assets/images/food/donut.svg"
-                alt=""
-              />
-              <h2 class="h2-deal">Free Donut!</h2>
-              <p class="deal-sub-text">For orders over $20</p>
-            </div>
+            <!-- ... -->
           </div>
           <div class="deal-button-container">
             <button
@@ -124,26 +96,69 @@
             ></button>
           </div>
         </section>
-        <!-- End Today's Menu Section -->
 
-        <!-- Begin Categories Section -->
+        <!-- Categories Section -->
         <section class="categories" id="categories">
           <!-- Data here is loaded from categories.js -->
         </section>
-        <!-- End Categories Section -->
 
-        <!-- Begin Best Offers Section -->
+        <!-- Best Offers Section -->
         <section class="offers" id="offers">
           <h2 class="h2">Best Offers 😍</h2>
-          <!-- Begin Offers Listing -->
           <div class="deals-container" id="deals-container"></div>
         </section>
-        <!-- End Best Offers Section -->
       </div>
       <!-- End Application Content -->
-      <!-- Begin Category Modal -->
+
+      <!-- Modals -->
+      <div class="modal-item hidden" id="modal-item">
+        <section class="modal-category__header" id="modal-item__header">
+          <div class="modal-category__header__information">
+            <h2
+              class="modal-category__header__title h2-deal"
+              id="item-title-header"
+            >
+              {$title}
+            </h2>
+            <button class="btn-close" id="item-close-button">
+              <img src="./assets/images/icons/X.svg" alt="Close Icon" />
+            </button>
+          </div>
+          <img
+            id="modal-item-icon"
+            class="modal-category-icon"
+            src="./assets/images/food/Burger.png"
+            alt="Item Image"
+          />
+        </section>
+        <section class="item-content" id="item-content">
+          <div class="addins" id="addins">
+            <h2 class="h2">Add More Flavor</h2>
+          </div>
+          <section class="nutrition-facts" id="nutrition-facts">
+            <div class="nutrition-facts__header" id="nutrition-header">
+              <h2 class="h2">Nutrition facts</h2>
+            </div>
+            <div class="nutrition-facts__info" id="nutrition-facts-info">
+              <div class="slot" id="fat">
+                <h2 class="h2" id="total-fat">35 g</h2>
+                <p class="light small">Total Fat (45% DV)</p>
+              </div>
+              <div class="slot" id="carbs">
+                <h2 class="h2" id="total-carbs">35 g</h2>
+                <p class="light small">Total Carbs (45% DV)</p>
+              </div>
+              <div class="slot" id="protein">
+                <h2 class="h2" id="total-protein">35 g</h2>
+                <p class="light small">Protein</p>
+              </div>
+            </div>
+          </section>
+          <p class="item-description" id="item-description"></p>
+        </section>
+      </div>
+
       <div class="modal-category hidden" id="modal-category">
-        <!-- Begin Category Modal Header -->
         <section class="modal-category__header" id="modal-category__header">
           <div class="modal-category__header__information">
             <h2
@@ -153,16 +168,16 @@
               {$title}
             </h2>
             <button class="btn-close" id="close-button">
-              <img src="./assets/images/icons/X.svg" />
+              <img src="./assets/images/icons/X.svg" alt="Close Icon" />
             </button>
           </div>
           <img
             id="modal-category-icon"
             class="modal-category-icon"
             src="./assets/images/food/Burger.png"
+            alt="Category Image"
           />
         </section>
-        <!-- End Category Modal Header -->
 
         <!-- Begin Category Item Listing -->
         <section class="category-listing" id="category-listing">
@@ -176,33 +191,38 @@
             <!-- Data here is loaded from categories.js -->
           </div>
         </section>
-        <!-- End Category Item Listing -->
       </div>
-      <!-- Begin Navigation -->
+
+      <!-- Navigation -->
       <nav class="nav">
         <div class="nav-item">
-          <img class="nav__icon" src="./assets/images/icons/Home.svg" alt="" />
-          <p class="dark-text"></p>
+          <img
+            class="nav__icon"
+            src="./assets/images/icons/Home.svg"
+            alt="Home Icon"
+          />
         </div>
         <div class="nav-item">
-          <img class="nav__icon" src="./assets/images/icons/Bag.svg" alt="" />
+          <img
+            class="nav__icon"
+            src="./assets/images/icons/Bag.svg"
+            alt="Bag Icon"
+          />
           <p class="cart-text hidden" id="cart-total">0</p>
         </div>
         <div class="nav-item">
-          <img class="nav__icon" src="./assets/images/icons/User.svg" alt="" />
-          <p class="dark-text"></p>
+          <img
+            class="nav__icon"
+            src="./assets/images/icons/User.svg"
+            alt="User Icon"
+          />
         </div>
       </nav>
-      <!-- End Navigation -->
-
-      <!-- End Category Overlay -->
     </div>
 
-    <!-- Primary JavaScript File -->
+    <!-- JavaScript Files -->
     <script type="module" src="./assets/js/index.js"></script>
-    <!-- Carousel Controller -->
     <script src="./assets/js/carousel.js"></script>
-    <!-- Categories -->
     <script type="module" src="./assets/js/categories.js"></script>
   </body>
 </html>
