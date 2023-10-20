@@ -7,7 +7,6 @@ export const clickCategoryItem = (item) => {
   hideMain();
   displayItem(item);
   showItemModal();
-  //addItemToCart(item);
 };
 
 export const clickCategory = (item) => {

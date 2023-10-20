@@ -397,6 +397,8 @@ input[type=text] {
     gap: 4rem;
     padding: 0;
     margin: 0;
+    margin-bottom: 14rem;
+    overflow-y: auto;
 }
 
 .modal-item {
@@ -408,15 +410,36 @@ input[type=text] {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    min-height: 100vh;
     z-index: 100;
-
+    box-sizing: border-box;
     /* Properties */
     display: flex;
     flex-direction: column;
     gap: 4rem;
     padding: 0;
     margin: 0;
+    margin-bottom: 14rem;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    overflow: auto;
+    min-height: 100vh;
+
+    position: fixed;
+    top: 0;
+    bottom:0;
+
+    overflow: auto;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    overflow: auto;
+    padding-bottom: 10rem;
+
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.modal-item::-webkit-scrollbar {
+    display: none;
 }
 
 .modal-category__header {
@@ -430,7 +453,7 @@ input[type=text] {
     border-radius: 0 0 var(--Radius) var(--Radius);
     box-shadow: var(--Shadow);
     position: relative;
-    height: 22.75rem;
+    min-height: 22.75rem;
     overflow: visible;
     max-height: 22.75rem;
     overflow: hidden;
@@ -540,6 +563,30 @@ justify-content: space-evenly;
     justify-content: center;
     align-items: center;
     gap: .4rem;
+}
+
+.addins-container {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(6.25rem, 1fr));
+    gap: 1rem;
+}
+
+.addon-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--Shadow);
+    padding: 1rem;
+    border-radius: var(--Radius);
+}
+
+.addins-image {
+    max-width: 6.25rem;
 }
 
 /* Typography */

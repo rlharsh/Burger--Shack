@@ -1,3 +1,5 @@
+import { itemDatabase } from "./firebase.js";
+
 export const displayItem = (item) => {
   document.getElementById("item-title-header").innerText = item.name;
   document.getElementById(
@@ -5,6 +7,12 @@ export const displayItem = (item) => {
   ).src = `../assets/images/food/${item.image}`;
 
   if (item.addons.length > 0) {
+    item.addons.forEach((addon) => {
+      const addOn = itemDatabase.find((el) => el.name === addon);
+      if (addOn) {
+        createAddon(addOn);
+      }
+    });
   } else {
     document.getElementById("addins").classList.add("hidden");
   }
@@ -23,4 +31,25 @@ export const displayItem = (item) => {
   document.getElementById("item-description").innerText = item.description;
 
   document.getElementById("nutrition-header").appendChild(caloriesTotal);
+};
+
+const createAddon = (item) => {
+  console.log(item);
+  const newAddOn = document.createElement("div");
+  newAddOn.classList.add("addon-card");
+
+  const addOnImage = document.createElement("img");
+  addOnImage.src = `../assets/images/food/${item.image}`;
+  addOnImage.classList.add("addins-image");
+  newAddOn.appendChild(addOnImage);
+
+  const addOnName = document.createElement("p");
+  addOnName.innerText = item.name;
+  newAddOn.appendChild(addOnName);
+
+  const addOnPrice = document.createElement("p");
+  addOnPrice.innerText = `+ $${item.price}`;
+  newAddOn.appendChild(addOnPrice);
+
+  document.getElementById("addins-container").appendChild(newAddOn);
 };

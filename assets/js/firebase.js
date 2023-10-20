@@ -10,6 +10,8 @@ const appSettings = {
   databaseURL: "https://chinese-restaurant-4e3f5-default-rtdb.firebaseio.com/",
 };
 
+import { clickCategoryItem } from "./clickHandler.js";
+
 // Initialize variables
 let app, db, menuItemsRef;
 export let itemDatabase = [];
@@ -25,9 +27,7 @@ export const initApp = () => {
   onValue(menuItemsRef, (snapshot) => {
     if (snapshot.exists()) {
       itemDatabase.length = 0;
-
-      let allMenuItems = Object.entries(snapshot.val());
-      allMenuItems.forEach((item) => {
+      snapshot.val().forEach((item) => {
         addMenuItem(item);
       });
     } else {
@@ -38,14 +38,14 @@ export const initApp = () => {
 
 const addMenuItem = (item) => {
   const id = item[0];
-  const itemJson = JSON.parse(item[1]);
+  const itemJson = item;
 
   // Add item to our internal database
   itemJson.id = id;
   itemDatabase.push(itemJson);
 
   // Check if the item is on sale
-  if (itemJson.sale_price < itemJson.price) {
+  if (itemJson.sale_price < itemJson.price && itemJson.type === "item") {
     addSaleItem(id, itemJson);
   }
 };
@@ -69,6 +69,10 @@ const addSaleItem = (id, item) => {
   itemTagline.innerText = item.tagline;
   itemDescription.appendChild(itemName);
   itemDescription.appendChild(itemTagline);
+
+  saleItem.addEventListener("click", () => {
+    clickCategoryItem(item);
+  });
 
   saleItem.appendChild(itemImage);
   saleItem.appendChild(itemDescription);
