@@ -1,11 +1,13 @@
 import { addItemToCart } from "./cart.js";
 import { processClickCategory } from "./categories.js";
 import { displayItem } from "./item.js";
+import { handleNavBar } from "./navController.js";
 
 export const clickCategoryItem = (item) => {
   hideAllModals();
   hideMain();
   displayItem(item);
+  handleNavBar("item");
   showItemModal();
 };
 
@@ -24,6 +26,7 @@ export const clickCloseCategory = () => {
 export const clickCloseItem = () => {
   hideAllModals();
   showMain();
+  handleNavBar("main");
 };
 
 const showCategoryModal = () => {
