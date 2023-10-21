@@ -50,20 +50,23 @@ export const displayItem = (item) => {
     "modal-item-icon"
   ).src = `../assets/images/food/${item.image}`;
 
+  // TODO: Create addon items
+  document.getElementById("addins").classList.add("hidden");
+
   if (item.addons && item.addons.length > 0) {
     item.addons.forEach((addon) => {
       const addOn = itemDatabase.find((el) => el.name === addon);
       if (addOn) {
-        createAddon(addOn);
+        //createAddon(addOn);
       }
     });
   } else {
     document.getElementById("addins").classList.add("hidden");
   }
 
-  let caloriesTotal = document.createElement("h2");
-  caloriesTotal.classList.add("h2");
-  caloriesTotal.textContent = `Cal ${item.nutrition.calories}`;
+  document.getElementById(
+    "caloric-info"
+  ).innerHTML = `Cal ${item.nutrition.calories}`;
 
   document.getElementById("total-fat").innerText = `${item.nutrition.fat} g`;
   document.getElementById(
@@ -73,8 +76,6 @@ export const displayItem = (item) => {
     "total-protein"
   ).innerText = `${item.nutrition.protein} g`;
   document.getElementById("item-description").innerText = item.description;
-
-  document.getElementById("nutrition-header").appendChild(caloriesTotal);
 
   updateTotals();
 };

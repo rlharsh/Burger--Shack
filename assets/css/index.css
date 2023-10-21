@@ -47,8 +47,15 @@ body {
     flex-direction: column;
     gap: 1.62rem;
 
-    margin-bottom: 20rem;
+    margin-bottom: 6rem;
     overflow-x: hidden;
+}
+
+.modal-category__header__title {
+    z-index: 100;
+    font-size: 2rem;
+    color: var(--Dark);
+    font-weight: 500;
 }
 
 .head {
@@ -554,10 +561,9 @@ input[type=text] {
     border-radius: 0 0 var(--Radius) var(--Radius);
     box-shadow: var(--Shadow);
     position: relative;
-    min-height: 22.75rem;
+    min-height: 16rem;
     overflow: visible;
     max-height: 22.75rem;
-    overflow: hidden;
 }
 
 .item {
@@ -773,8 +779,8 @@ justify-content: space-evenly;
 .modal-category-icon {
     height: 20rem;
     position: absolute;
-    right: -1rem;
-    bottom: -1rem;
+    right: -2rem;
+    bottom: -2rem;
 }
 
 .no-scroll {
