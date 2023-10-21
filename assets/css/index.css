@@ -224,6 +224,11 @@ input[type=text] {
     font-weight: 700;
 }
 
+.quantity-dark-bold {
+    font-size: 1.25rem;
+    color: var(--Dark);
+}
+
 .btn-deal:focus {
     outline: 2px solid var(--Dark);
 }
@@ -327,7 +332,7 @@ input[type=text] {
     max-width: 393px;
     width: 393px;
     min-height: 5.75rem;
-    background-color: var(--White-Orange);
+    background-color: var(--White);
     border-radius: 1.75rem;
     position: fixed;
     bottom: 1.25rem;
@@ -342,12 +347,33 @@ input[type=text] {
     padding: .5rem;
 }
 
+.numeric-selector {
+    min-height: 1rem;
+    min-width: 1rem;
+    border-radius: 50%;
+    padding: 1rem;
+    border: none;
+    background-color: var(--Pink-Deep);
+    color: var(--White);
+    cursor: pointer;
+}
+
+
+.unavailable {
+    background-color: #F7EDE2;
+    color: var(--Pink-Deep);
+}
+
+
 .item-quantity-selector {
     min-height: 4.75rem;
     min-width: 10rem;
     border-radius: 1.25rem;
     border: 1px solid var(--Pink);
     flex: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .categories {

@@ -1,6 +1,48 @@
 import { itemDatabase } from "./firebase.js";
+import { addItemToCart } from "./cart.js";
+
+let selectedItem;
+let selectedAmount = 1;
+
+const DECREASE_AMOUNT = document.getElementById("item-quantity-selector-down");
+const INCREASE_AMOUNT = document.getElementById("item-quantity-selector-up");
+const ADD_TO_CART = document.getElementById("btn-add-to-cart");
+
+ADD_TO_CART.addEventListener("click", () => {
+  addItemToCart(selectedItem, selectedAmount);
+});
+
+DECREASE_AMOUNT.addEventListener("click", () => {
+  selectedAmount = selectedAmount - 1 >= 1 ? selectedAmount - 1 : 1;
+  updateTotals();
+});
+
+INCREASE_AMOUNT.addEventListener("click", () => {
+  selectedAmount = selectedAmount + 1 <= 20 ? selectedAmount + 1 : 20;
+  updateTotals();
+});
+
+const updateTotals = () => {
+  document.getElementById("item-quantity").innerText = String(selectedAmount);
+  document.getElementById("price-item-total").innerText = `$${(
+    selectedItem.price * selectedAmount
+  ).toFixed(2)}`;
+
+  if (selectedAmount <= 1) {
+    DECREASE_AMOUNT.classList.add("unavailable");
+  } else {
+    DECREASE_AMOUNT.classList.remove("unavailable");
+  }
+
+  if (selectedAmount >= 20) {
+    INCREASE_AMOUNT.classList.add("unavailable");
+  } else {
+    INCREASE_AMOUNT.classList.remove("unavailable");
+  }
+};
 
 export const displayItem = (item) => {
+  selectedItem = item;
   document.getElementById("item-title-header").innerText = item.name;
   document.getElementById(
     "modal-item-icon"
@@ -31,6 +73,8 @@ export const displayItem = (item) => {
   document.getElementById("item-description").innerText = item.description;
 
   document.getElementById("nutrition-header").appendChild(caloriesTotal);
+
+  updateTotals();
 };
 
 const createAddon = (item) => {

@@ -1,7 +1,9 @@
 export const ITEMS_IN_CART = [];
 
-export const addItemToCart = (item) => {
-  ITEMS_IN_CART.push(item);
+export const addItemToCart = (item, quantity) => {
+  for (let i = 0; i < quantity; i++) {
+    ITEMS_IN_CART.push(item);
+  }
   processCart();
 };
 

@@ -23,6 +23,15 @@
       rel="stylesheet"
     />
 
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
     <!-- Local Stylesheets -->
     <link rel="stylesheet" href="./assets/css/index.css" />
   </head>
@@ -223,7 +232,18 @@
 
     <!-- Navigation Cart -->
     <div class="nav-secondary" id="secondary-nav">
-      <div class="item-quantity-selector" id="item-quantity-selector"></div>
+      <div class="item-quantity-selector" id="item-quantity-selector">
+        <button
+          class="numeric-selector unavailable"
+          id="item-quantity-selector-down"
+        >
+          <i class="fa-solid fa-minus"></i>
+        </button>
+        <p class="quantity-dark-bold" id="item-quantity">1</p>
+        <button class="numeric-selector" id="item-quantity-selector-up">
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </div>
       <div class="item-button-card-add" id="item-button-card-add">
         <button class="btn-add-to-cart" id="btn-add-to-cart">
           <p>Add to Cart</p>
