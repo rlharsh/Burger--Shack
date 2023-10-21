@@ -77,10 +77,9 @@ const loadCategories = () => {
 };
 
 export const processClickCategory = (category) => {
-  console.log(category);
   let itemsInCategory = [];
   itemDatabase.forEach((item) => {
-    if (item.category === category.toLowerCase()) {
+    if (item.category.toLowerCase() === category.toLowerCase()) {
       itemsInCategory.push(item);
     }
   });

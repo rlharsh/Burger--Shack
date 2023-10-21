@@ -1,5 +1,6 @@
 import { itemDatabase } from "./firebase.js";
 import { addItemToCart } from "./cart.js";
+import { clickCloseItem } from "./clickHandler.js";
 
 let selectedItem;
 let selectedAmount = 1;
@@ -10,6 +11,7 @@ const ADD_TO_CART = document.getElementById("btn-add-to-cart");
 
 ADD_TO_CART.addEventListener("click", () => {
   addItemToCart(selectedItem, selectedAmount);
+  clickCloseItem();
 });
 
 DECREASE_AMOUNT.addEventListener("click", () => {
@@ -48,7 +50,7 @@ export const displayItem = (item) => {
     "modal-item-icon"
   ).src = `../assets/images/food/${item.image}`;
 
-  if (item.addons.length > 0) {
+  if (item.addons && item.addons.length > 0) {
     item.addons.forEach((addon) => {
       const addOn = itemDatabase.find((el) => el.name === addon);
       if (addOn) {

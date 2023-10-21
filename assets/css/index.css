@@ -470,9 +470,8 @@ input[type=text] {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    min-height: 100vh;
     z-index: 100;
-
+    box-sizing: border-box;
     /* Properties */
     display: flex;
     flex-direction: column;
@@ -480,7 +479,27 @@ input[type=text] {
     padding: 0;
     margin: 0;
     margin-bottom: 14rem;
-    overflow-y: auto;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    overflow: auto;
+    min-height: 100vh;
+
+    position: fixed;
+    top: 0;
+    bottom:0;
+
+    overflow: auto;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    overflow: auto;
+    padding-bottom: 10rem;
+
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.modal-category::-webkit-scrollbar {
+    display: none;
 }
 
 .modal-item {
