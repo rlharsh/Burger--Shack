@@ -562,7 +562,7 @@ input[type=text] {
     box-shadow: var(--Shadow);
     position: relative;
     min-height: 16rem;
-    overflow: visible;
+    overflow: hidden;
     max-height: 22.75rem;
 }
 
