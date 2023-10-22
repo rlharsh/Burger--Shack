@@ -11,6 +11,7 @@ const ADD_TO_CART = document.getElementById("btn-add-to-cart");
 
 ADD_TO_CART.addEventListener("click", () => {
   addItemToCart(selectedItem, selectedAmount);
+  selectedAmount = 1;
   clickCloseItem();
 });
 

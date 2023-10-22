@@ -52,10 +52,15 @@ body {
 }
 
 .modal-category__header__title {
+    background-color: var(--Green);
+    max-width: 80%;
+    box-shadow: var(--Shadow);
+    border-radius: var(--Radius);
+    padding: 1rem;
     z-index: 100;
     font-size: 2rem;
-    color: var(--Dark);
     font-weight: 500;
+    color: var(--White);
 }
 
 .head {
@@ -185,6 +190,31 @@ input[type=text] {
     background-color: var(--Pink);
     border-radius: 1rem;
     z-index: 1;
+    margin-left: auto;
+    margin-top: auto;
+    order: -1;
+
+    position: absolute;
+    top: 0rem;
+    right: 1rem;
+    z-index: 500;
+}
+
+.round-text {
+    color: var(--Pink-Deep);
+    background-color: #F7EDE2;
+    border-radius: var(--Radius);
+    padding: 1rem;
+    z-index: 4;
+    max-width: 50%;
+    text-align: center;
+    font-weight: 700;
+}
+
+.green {
+    margin-top: -1.6rem;
+    background-color: var(--Green-Deep);
+    color: var(--White);
 }
 
 .btn-close:hover {
@@ -224,6 +254,7 @@ input[type=text] {
     font-size: 1rem;
     padding: 1rem 1.25rem;
     font-family: 'Unbounded', sans-serif;
+    cursor: pointer;
 }
 
 .price-white-bold {
@@ -564,10 +595,11 @@ input[type=text] {
     min-height: 16rem;
     overflow: hidden;
     max-height: 22.75rem;
+    flex-direction: column;
 }
 
 .item {
-    width: 100%;
+    width: auto%;
     background-color: var(--White-Off);
     display: flex;
     /* gap: 1.25rem; */
@@ -611,13 +643,16 @@ input[type=text] {
     flex-direction: column;
     gap: 2rem;
     position: relative;
+    padding: 1rem;
 }
 
 .modal-category__header__information {
     display: flex;
+    flex-direction: column;
     width: 100%;
-    justify-content: space-between;
-    align-items: center;
+    /* justify-content: space-between; */
+    justify-content: center;
+    gap: 2rem;
     position: relative;
 }
 
@@ -763,11 +798,12 @@ justify-content: space-evenly;
 .price {
     position: absolute;
     top: 1.6rem;
-    right: 0;
+    left: 0;
     background-color: var(--Pink-Deep);
     font-size: 1rem;
     padding: .5rem;
-    border-radius: var(--Radius) 0 0 var(--Radius);
+    border-radius: 0 var(--Radius) var(--Radius) 0;
+    z-index: 4;
     color: var(--White);
     box-shadow: var(--Shadow);
 }

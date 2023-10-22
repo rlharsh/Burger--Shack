@@ -95,8 +95,8 @@ const showCategory = (category, items) => {
   document.getElementById(
     "category-descriptive-text"
   ).textContent = `All of our ${category.toLowerCase()}!`;
-  document.getElementById("modal-category__header").style.backgroundColor =
-    categorySelect.color;
+  //document.getElementById("modal-category__header").style.backgroundColor =
+  //  categorySelect.color;
 
   const categoryListingContainer = document.getElementById(
     "category-lising-container"
