@@ -11,6 +11,12 @@ export const clickCategoryItem = (item) => {
   showItemModal();
 };
 
+export const clickCart = () => {
+  hideAllModals();
+  hideMain();
+  showCart();
+};
+
 export const clickCategory = (item) => {
   hideAllModals();
   hideMain();
@@ -42,6 +48,7 @@ const showItemModal = () => {
 const hideAllModals = () => {
   document.getElementById("modal-category").classList.add("hidden");
   document.getElementById("modal-item").classList.add("hidden");
+  document.getElementById("modal-cart").classList.add("hidden");
 };
 
 const hideMain = () => {
@@ -52,4 +59,8 @@ const hideMain = () => {
 const showMain = () => {
   const appDiv = document.getElementById("app");
   appDiv.classList.remove("no-scroll");
+};
+
+const showCart = () => {
+  document.getElementById("modal-cart").classList.remove("hidden");
 };

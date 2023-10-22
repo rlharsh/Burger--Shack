@@ -90,6 +90,15 @@
               <h2 class="h2-deal">Free Donut!</h2>
               <p class="deal-sub-text">For orders over $20</p>
             </div>
+            <div class="deal-item">
+              <img
+                class="deal-item__food"
+                src="./assets/images/food/donut.svg"
+                alt="Deal Food Image"
+              />
+              <h2 class="h2-deal">Free Donut!</h2>
+              <p class="deal-sub-text">For orders over $20</p>
+            </div>
             <!-- ... -->
           </div>
           <div class="deal-button-container">
@@ -120,6 +129,33 @@
       <!-- End Application Content -->
 
       <!-- Modals -->
+      <div class="modal-item hidden" id="modal-cart">
+        <section class="modal-cart-header" id="modal-cart-header">
+          <h2 class="h2">My Cart</h2>
+          <button class="btn-close" id="item-close-button">
+            <img src="./assets/images/icons/X.svg" alt="Close Icon" />
+          </button>
+        </section>
+        <h2 class="h2">Order</h2>
+        <section class="cart-listing" id="cart-listing">
+          <div class="cart-item">
+            <img src="./assets/images/food/Burger.png" alt="" />
+            <div class="cart-item-info">
+              <h3 class="h3">Mr. Cheezy</h3>
+              <p>$5.49</p>
+            </div>
+            <div class="cart-amount-selector" id="cart-amount-selector">
+              <button class="numeric-selector">
+                <i class="fa-solid fa-minus"></i>
+              </button>
+              <p>5</p>
+              <button class="numeric-selector">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
       <div class="modal-item hidden" id="modal-item">
         <section class="modal-category__header" id="modal-item__header">
           <div class="modal-category__header__information">
@@ -212,14 +248,14 @@
             alt="Home Icon"
           />
         </div>
-        <div class="nav-item">
+        <button class="nav-item" id="nav-cart">
           <img
             class="nav__icon"
             src="./assets/images/icons/Bag.svg"
             alt="Bag Icon"
           />
           <p class="cart-text hidden" id="cart-total">0</p>
-        </div>
+        </button>
         <div class="nav-item">
           <img
             class="nav__icon"
